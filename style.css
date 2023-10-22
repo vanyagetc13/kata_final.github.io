@@ -399,7 +399,7 @@ h3 {
     -webkit-animation: 0.5s forwards linear shaky;
             animation: 0.5s forwards linear shaky; }
 
-.content__header__button:hover img {
+.content-header__button:hover img {
   -webkit-animation: 0.5s forwards linear shaky;
           animation: 0.5s forwards linear shaky; }
 
@@ -426,6 +426,11 @@ h3 {
     .nav-menu.active .burger-menu-btn span::before {
       transform: rotate(-45deg); }
 
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit; }
+
 .logo {
   display: block; }
 
@@ -441,15 +446,12 @@ h3 {
   font-size: 1em;
   line-height: 150%;
   letter-spacing: -0.2px; }
-  .nav-menu__list-item > a {
-    text-decoration: none;
-    cursor: pointer;
-    color: inherit;
+  .nav-menu__list-item > .link {
     font-weight: 500; }
-  .nav-menu__list-item.active > a {
+  .nav-menu__list-item.active > .link {
     color: #7e7e82;
     position: relative; }
-    .nav-menu__list-item.active > a::before {
+    .nav-menu__list-item.active > .link::before {
       content: '';
       position: absolute;
       height: 135%;
@@ -462,11 +464,11 @@ h3 {
 .nav-menu__list-item + .nav-menu__list-item {
   padding-top: 28px; }
 
-.contacts > a {
+.contacts > .link {
   display: block;
   text-decoration: none;
   color: inherit; }
-  .contacts > a:last-child {
+  .contacts > .link:last-child {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 13px; }
@@ -506,16 +508,16 @@ h3 {
   margin-left: auto;
   background-color: #f8f8f8; }
 
-.content__header {
+.content-header {
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
-.content__header__title {
+.content-header__title {
   font-weight: bold;
   font-size: 1.75em;
   position: relative; }
-  .content__header__title::before {
+  .content-header__title::before {
     content: '';
     position: absolute;
     background-color: #41f6d7;
@@ -524,13 +526,13 @@ h3 {
     height: 100%;
     left: -34px; }
 
-.content__header__buttons {
+.content-header__buttons {
   display: flex;
   gap: 32px; }
 
-.content__header__button {
+.content-header__button {
   display: block; }
-  .content__header__button > a {
+  .content-header__button > .link {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -539,9 +541,8 @@ h3 {
     text-decoration: none; }
 
 .content__nav-menu {
-  margin-top: 25px;
   display: flex;
-  gap: 20px 5px;
+  gap: 5px;
   flex-wrap: wrap;
   letter-spacing: -0.2px; }
   .content__nav-menu > .nav-menu-btn {
@@ -562,7 +563,6 @@ h3 {
 
 .text__wrapper {
   display: flex;
-  min-height: 310px;
   margin-top: 20px;
   row-gap: 16px; }
   .text__wrapper .CPS-img {
@@ -609,8 +609,8 @@ h3 {
     background: linear-gradient(90deg, #f8f8f8 45%, #fff 98%);
     border-top: 1px solid #d9fff5; }
 
-.brand__list,
-.repair__list {
+.brands-list,
+.repairs-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 16px;
@@ -620,11 +620,11 @@ h3 {
   max-height: 160px;
   overflow: hidden;
   transition: max-height 1s ease; }
-  .brand__list.expanded,
-  .repair__list.expanded {
+  .brands-list.expanded,
+  .repairs-list.expanded {
     max-height: 394px; }
 
-.brand__card {
+.brands-list__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -635,25 +635,25 @@ h3 {
   border-radius: 6px;
   border: 1px solid #eaeaea; }
 
-.brand__card a,
-.repair__card a {
+.brands-list__item .link,
+.repairs-list__item .link {
   line-height: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content; }
 
-.brand__card .dropdown,
-.repair__card .dropdown {
+.brands-list__item .dropdown,
+.repairs-list__item .dropdown {
   padding: 13px 15px;
   border: 1px solid #ff3e79;
   border-radius: 50%; }
 
-.repair__list {
+.repairs-list {
   max-height: 160px; }
-  .repair__list.expanded {
+  .repairs-list.expanded {
     max-height: 376px; }
 
-.repair__card {
+.repairs-list__item {
   box-sizing: border-box;
   width: 100%;
   height: 160px;
@@ -663,7 +663,7 @@ h3 {
   background-color: #fff;
   padding: 16px;
   border: 1px solid #eaeaea; }
-  .repair__card a {
+  .repairs-list__item .link {
     align-self: flex-end; }
 
 .price__table {
@@ -759,7 +759,7 @@ h3 {
         width: 3px;
         height: 120%;
         background-color: #41f6d7; }
-    .modal form a {
+    .modal form .link {
       color: #ff3e79;
       text-decoration: none; }
   .modal.active {
@@ -831,12 +831,16 @@ h3 {
 .burger-menu-btn {
   display: none; }
 
-.content__header__contacts {
+.content-header__contacts {
   display: none; }
 
 @media screen and (max-width: 1439px) {
-  .content__header__contacts {
+  .content-header__contacts {
     display: flex; }
+  .CPS-img {
+    width: 360px; }
+  .content-header__title::before {
+    left: -24px; }
   .nav-menu__footer {
     display: none; }
   .nav-menu {
@@ -896,8 +900,8 @@ h3 {
     .burger-menu-btn:hover > span {
       -webkit-animation: 0.5s forwards linear shaky;
               animation: 0.5s forwards linear shaky; }
-  .brand__list,
-  .repair__list {
+  .brands-list,
+  .repairs-list {
     grid-template-columns: repeat(3, 1fr); }
   .mobile__contact-quick-acess {
     margin-right: 138px; }
@@ -951,23 +955,23 @@ h3 {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    margin-top: 50px; }
+    padding-right: 30px; }
   .nav-menu__footer {
     position: fixed;
     bottom: 0;
     z-index: 17; }
-  .content__header__buttons {
+  .content-header__buttons {
     position: absolute;
     z-index: 1;
     right: 0;
     top: 0;
     padding: 24px;
     gap: 16px; }
-    .content__header__buttons > .content__header__button > a > span {
+    .content-header__buttons > .content-header__button > a > span {
       display: none; }
-  .content__header__button:first-child {
+  .content-header__button:first-child {
     position: relative; }
-    .content__header__button:first-child::before {
+    .content-header__button:first-child::before {
       position: absolute;
       content: '';
       height: 80%;
@@ -976,6 +980,14 @@ h3 {
       top: 10%;
       background-color: #eaeaea;
       border-radius: 1px; }
+  #readnext-p_1.expanded {
+    max-height: 145px; }
+  .cps-paragraph {
+    max-height: 163px;
+    overflow-y: hidden; }
+    .cps-paragraph.active {
+      max-height: 560px;
+      transition: max-height 1s ease; }
   .text__wrapper > img {
     height: 260px; } }
 
@@ -984,13 +996,14 @@ h3 {
     flex-direction: column; }
     .text__wrapper .CPS-img {
       width: calc(100% + 32px);
+      margin-right: -16px;
       padding-left: 0; }
+  .content-header__title::before {
+    left: -16px; }
   .logo::before {
     right: -16px;
     left: auto; }
   .mobile__contact-quick-acess {
-    display: none; }
-  .content__header__button:first-child::before {
     display: none; }
   .nav-menu__header {
     gap: 15px; }
@@ -1025,14 +1038,14 @@ h3 {
       background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%); }
   .swiper-pagination {
     margin-top: 5px; }
-  .brand__list,
-  .repair__list {
+  .brands-list,
+  .repairs-list {
     display: flex;
     flex-direction: row;
     overflow: visible;
     gap: 16px; }
-  .brand__card,
-  .repair__card {
+  .brands-list__item,
+  .repairs-list__item {
     width: 83%; }
   .swiper-pagination {
     position: static; }
@@ -1131,6 +1144,11 @@ h3 {
 @media screen and (min-width: 1440px) {
   .mobile__contact-quick-acess {
     display: none; } }
+
+@media screen and (max-width: 1440px) and (max-height: 700px) {
+  .nav-menu__list {
+    max-height: calc(100dvh - 275px);
+    overflow-y: scroll; } }
 
 
 /*# sourceMappingURL=style.css.map*/
