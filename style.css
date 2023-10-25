@@ -816,7 +816,8 @@ button.quick-access-icon {
   width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
-  cursor: pointer; }
+  cursor: pointer;
+  font-weight: 500; }
 
 .modal__input,
 .modal textarea {
@@ -980,13 +981,15 @@ button.quick-access-icon {
     z-index: 17; }
   .content-header__buttons {
     position: absolute;
-    z-index: 13;
+    z-index: 902;
     right: 0;
     top: 0;
     padding: 24px;
     gap: 16px; }
     .content-header__buttons > .content-header__button > a > span {
       display: none; }
+    .content-header__buttons.not-visible {
+      z-index: 12; }
   .content-header__button:first-child {
     position: relative; }
     .content-header__button:first-child::before {
@@ -1061,7 +1064,9 @@ button.quick-access-icon {
     display: flex;
     flex-direction: row;
     overflow: visible;
-    gap: 16px; }
+    gap: 0; }
+  .content__nav-menu {
+    gap: 0; }
   .brands-list__item,
   .repairs-list__item {
     width: 83%; }
@@ -1104,7 +1109,6 @@ button.quick-access-icon {
     .price__table > tbody {
       display: flex;
       background-color: transparent;
-      gap: 16px;
       height: 100%; }
     .price__table > tbody > tr {
       display: grid;
